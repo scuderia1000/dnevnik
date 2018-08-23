@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails dnevnik: production" uuid="aa5e3d1e-f9d5-4320-bcff-7825d78ae29b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/dnevnik_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails dnevnik: development" uuid="984a8fc2-e89d-4951-ab96-eba08d8a4997">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/dnevnik_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails dnevnik: test" uuid="42f0b6d8-e2a9-47cb-8067-2a79e174a568">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/dnevnik_test</jdbc-url>
+    </data-source>
+  </component>
+</project>
