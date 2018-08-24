@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'welcome#index'
   end
+
+  namespace :api, defaults: { format: JSON } do
+    get 'school', to: 'config#school'
+  end
 end

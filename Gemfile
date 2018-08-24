@@ -8,6 +8,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'webpacker'
 gem 'jbuilder', '~> 2.5'
+gem "rails-settings-cached"
 
 
 # Reduces boot times through caching; required in config/boot.rb

@@ -9,6 +9,7 @@ RSpec.describe User, type: :model do
           middle_name: 'Ivanovich'
       )
       expect(user.full_name).to eq('Ivanov Ivan Ivanovich')
+
     end
   end
 end
