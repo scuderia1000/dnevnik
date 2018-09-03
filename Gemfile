@@ -8,15 +8,22 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'webpacker'
 gem 'jbuilder', '~> 2.5'
-gem "rails-settings-cached"
-
+gem 'rails-settings-cached'
+gem 'wisper', '2.0.0'
+gem 'sorcery'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.7'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails', '~> 4.0'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'wisper-rspec', require: false
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :development do
