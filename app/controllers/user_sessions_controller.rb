@@ -10,10 +10,11 @@ class UserSessionsController < ApplicationController
     if @user = login(params[:iin], params[:password])
       role_selector = RoleSelector.new
       role_selector
-          .on(:multirole) { redirect_to multirole_path }
-          .on(:administrator) { redirect_to administrator_path }
-          .on(:student) { redirect_to student_path }
-          .on(:custodian) { redirect_to custodian_path }
+          .on(:multirole) { redirect_to multirole_root_path }
+          .on(:admin) { redirect_to admin_root_path }
+          .on(:student) { redirect_to student_root_path }
+          .on(:custodian) { redirect_to custodian_root_path }
+          .on(:teacher) { redirect_to teacher_root_path }
           .on(:none) { redirect_to no_role_path }
       role_selector.call(@user.roles)
       # redirect_back_or_to(:users, notice: 'Login successful')
