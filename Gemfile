@@ -11,6 +11,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails-settings-cached'
 gem 'wisper', '2.0.0'
 gem 'sorcery'
+gem 'reform', '>= 2.2.0'
+gem 'reform-rails'
+gem 'active_model_serializers'
+gem 'oj'
+gem 'dry-validation'
+gem 'dry-transaction'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -20,6 +28,8 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'rspec-rails', '~> 3.7'
   gem 'wisper-rspec', require: false
+  gem 'capybara'
+  gem 'airborne'
 end
 
 group :test do

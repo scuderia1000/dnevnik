@@ -10,6 +10,8 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
+
+# require 'reform/rails'
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
@@ -29,5 +31,6 @@ module Dnevnik
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    # config.reform.validations = :dry
   end
 end
