@@ -20,13 +20,23 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'welcome#index'
+    namespace :api, defaults: { format: :json } do
+      resources :study_groups
+      resources :users
+    end
+    get '*path', to: 'welcome#index'
   end
 
   namespace :multirole do
     root to: 'welcome#index'
   end
 
-  namespace :api, defaults: { format: JSON } do
+  namespace :no_role do
+    root to: 'welcome#index'
+  #   API
+  end
+
+  namespace :api, defaults: { format: :json } do
     get 'school', to: 'config#school'
   end
 end

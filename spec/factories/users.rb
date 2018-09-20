@@ -7,6 +7,11 @@ FactoryBot.define do
     first_name { "Bill" }
     last_name  { "Gates" }
     iin { generate(:iin) }
-    # admin { false }
+    salt 'asdafdasdadsa5646848asdadqwe'
+    crypted_password { Sorcery::CryptoProviders::BCrypt.encrypt('secret', salt) }
+
+    trait :admin do
+      roles { ['admin'] }
+    end
   end
 end

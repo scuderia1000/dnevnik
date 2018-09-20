@@ -15,7 +15,7 @@ gem 'reform', '>= 2.2.0'
 gem 'reform-rails'
 gem 'active_model_serializers'
 gem 'oj'
-gem 'dry-validation'
+gem 'dry-validation', '~> 0.11.1'
 gem 'dry-transaction'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
@@ -29,7 +29,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'wisper-rspec', require: false
   gem 'capybara'
-  gem 'airborne'
+  gem 'airborne', '~> 0.2.13'
 end
 
 group :test do
