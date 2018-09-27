@@ -6,8 +6,9 @@ FactoryBot.define do
   factory :user do
     first_name { "Bill" }
     last_name  { "Gates" }
+    # middle_name  { "Tests" }
     iin { generate(:iin) }
-    salt 'asdafdasdadsa5646848asdadqwe'
+    salt { 'asdafdasdadsa5646848asdadqwe' }
     crypted_password { Sorcery::CryptoProviders::BCrypt.encrypt('secret', salt) }
 
     trait :admin do

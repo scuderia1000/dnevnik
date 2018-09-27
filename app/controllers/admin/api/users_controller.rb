@@ -2,11 +2,20 @@ module Admin
   module Api
     class UsersController < BaseController
       def index
-        users = User.all
+        q = User.ransack(params[:q])
+        users = q.result
         render json: users, status: 200
+        # render json: { users: users }, status: 200
+        # render json: users_json, status: 200
         # q = StudyGroup.ransack(params[:q])
         # study_groups = q.result.order_by_model
         # render json: study_groups
+      end
+
+      def create
+        transaction = CreateUser.new
+        result = transaction.call(params: params[:user])
+        render json: result.value
       end
 
       # def show
@@ -16,11 +25,7 @@ module Admin
       #   render json: { errors: { record: :not_found } }
       # end
       #
-      # def create
-      #   transaction = CreateStudyGroup.new
-      #   result = transaction.call(params: params[:study_group])
-      #   render json: result.value
-      # end
+
       #
       # def update
       #   transaction = UpdateStudyGroup.new
