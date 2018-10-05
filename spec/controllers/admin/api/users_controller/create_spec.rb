@@ -36,7 +36,10 @@ RSpec.describe Admin::Api::UsersController, type: :controller do
 
           it 'returns errors description' do
             expect(JSON.parse(response.body)).to eq(
-                 { errors: { last_name: 'must be filled' } }
+                 { "errors" => {
+                     "iin"=>["must be filled", "size must be 12"], "last_name"=>["must be filled"]
+                  }
+                 }
              )
           end
         end

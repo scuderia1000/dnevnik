@@ -16,8 +16,9 @@ gem 'reform-rails'
 gem 'active_model_serializers'
 gem 'oj'
 gem 'dry-validation', '~> 0.11.1'
-gem 'dry-transaction'
+gem 'dry-transaction', '~> 0.13.0'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'dry-monads', '~> 0.4.0'
 
 
 # Reduces boot times through caching; required in config/boot.rb

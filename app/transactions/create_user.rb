@@ -1,3 +1,5 @@
+require "dry/transaction"
+
 class CreateUser
   include Dry::Transaction
 
@@ -11,7 +13,10 @@ class CreateUser
     if form.validate(input[:params])
       Success(form)
     else
-      Failure(form.errors)
+      # Left('test')
+      # Failure('some thing wrong')
+      error = form.errors
+      Failure(error)
     end
   end
 
