@@ -44,6 +44,58 @@ RSpec.describe Admin::Api::UsersController, type: :controller do
           end
         end
 
+        context 'with duplicated iin' do
+          let!(:another_user) { create(:user, iin: '123456789012') }
+
+          before(:each) do
+            login_user(user)
+
+            post :create, format: :json, params: {
+                user: {
+                    first_name: 'Ron',
+                    last_name: 'Wizzley',
+                    iin: another_user.iin
+                }
+            }
+          end
+
+          it 'returns 200 http code' do
+            expect(response.code).to eq('200')
+          end
+
+          it 'returns errors description' do
+            expect(JSON.parse(response.body)).to eq({ "errors" => { "record" => "not_unique" } })
+          end
+        end
+
+        context 'with valid data' do
+          before(:each) do
+            login_user(user)
+            post :create, format: :json, params: {
+                user: {
+                    first_name: 'Ron',
+                    last_name: 'Wizzley',
+                    iin: '123456789012'
+                }
+            }
+          end
+
+          it 'returns 200 http code' do
+            expect(response.code).to eq('200')
+          end
+
+          it 'returns new created user' do
+            expect_json(
+                'user',
+                id: User.all.order(:created_at).last.id,
+                first_name: 'Ron',
+                last_name: 'Wizzley',
+                middle_name: nil,
+                iin: '123456789012'
+            )
+          end
+        end
+
       end
     end
 

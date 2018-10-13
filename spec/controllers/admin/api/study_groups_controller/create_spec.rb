@@ -31,7 +31,7 @@ RSpec.describe Admin::Api::StudyGroupsController, type: :controller do
         end
       end
 
-      context 'with existing record with samw params' do
+      context 'with existing record with same params' do
         before(:each) do
           login_user(admin)
           post :create, params: {
